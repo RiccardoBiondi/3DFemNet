@@ -75,3 +75,16 @@ def Input() :
     '''
 
     return keras.Input((None, None, None, 1), batch_size = 1)
+
+
+
+def Concatenate(lst) :
+    '''
+    Parameters
+    ----------
+    lst : list
+        list of layers to Concatenate
+
+    '''
+
+    return ly.Concatenate()

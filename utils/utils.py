@@ -146,7 +146,7 @@ def generate_data_w_different_shape(inputs, targets) :
     '''
 
     while True :
-        for x, y in zip(inputs, tragets) :
+        for x, y in zip(inputs, targets) :
             yield (x, y)
 
 

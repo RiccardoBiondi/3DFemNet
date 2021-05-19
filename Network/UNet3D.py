@@ -9,6 +9,7 @@ from Network.layers import Conv3D
 from Network.layers import Deconv3D
 from Network.layers import MaxPool3D
 from Network.layers import UpSampling3D
+from Network.layers import Concatenate
 
 __author__ = ['Riccardo Biondi']
 __email__ = ['riccardo.biondi7@unibo.it']
@@ -84,7 +85,7 @@ class UNet3D :
 
         us = UpSampling3D((2, 2, 2))(inputs)
 
-        concat = ly.Concatenate()([us, skip_connection])
+        concat = Concatenate()([us, skip_connection])
 
         c = Conv3D(filters)(concat)
         c = Conv3D(filters)(c)
