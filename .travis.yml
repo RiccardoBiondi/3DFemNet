@@ -1,0 +1,31 @@
+language: python
+
+matrix:
+  include:
+
+    - os: linux
+      python: 3.5
+      name: ubuntu 20.04 - python@3.6
+      dist: focal
+      sudo: true
+      env:
+        - MATRIX_EVAL=""
+
+    - os: linux
+      python: 3.6
+      name: ubuntu 20.04 - python@3.7
+      dist: focal
+      sudo: true
+      env:
+        - MATRIX_EVAL=""
+
+    - os: linux
+      python: 3.7
+      name: ubuntu 20.04 - python@3.8
+      dist: focal
+      sudo: true
+      env:
+        - MATRIX_EVAL=""
+
+    - os: linux
+      python: 3.8
