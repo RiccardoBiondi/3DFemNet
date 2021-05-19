@@ -27,13 +27,6 @@ matrix:
       env:
         - MATRIX_EVAL=""
 
-    - os: linux
-      python: 3.9
-      name: ubuntu 20.04 - python@3.8
-      dist: focal
-      sudo: true
-      env:
-        - MATRIX_EVAL=""
 
 before_install:
   - travis_retry eval "${MATRIX_EVAL}"
