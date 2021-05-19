@@ -151,7 +151,7 @@ def generate_data_w_different_shape(inputs, targets) :
 
 
 
-def data_augmentation_step(inputs, targets. teta = 10., flip_axis = 'vertical') :
+def data_augmentation_step(inputs, targets, teta = 10., flip_axis = 'vertical') :
     '''
     Implementation of an on-the-fly data augmentation. The data
     augmentation consist in flipping around vertical axis, rotation
