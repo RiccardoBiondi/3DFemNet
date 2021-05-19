@@ -65,7 +65,7 @@ install:
   - python setup.py develop --user
 
 script:
-  - travis_wait 45 python -m pytest --cov=CTLungSeg --cov-config=.coveragerc
+  - travis_wait 45 python -m pytest --cov=3DFemNet --cov-config=.coveragerc
 
 after_succes:
   - codecov
