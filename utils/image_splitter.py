@@ -6,11 +6,13 @@
 import itk
 import numpy as np
 
-# change depedencies
-from FemurSegmentation.methods import median_filter
-from FemurSegmentation.methods import opening
-from FemurSegmentation.methods import binary_threshold
-from FemurSegmentation.utilities import image2array, array2image
+from utils.utils import cast_image
+from utils.utils import array2image
+from utils.utils import image2array
+from utils.filters import median_filter
+from utils.filters import connected_components
+from utils.filters import binary_threshold
+from utils.filters import opening
 
 
 __author__ = ['Riccardo Biondi']
@@ -87,11 +89,13 @@ class LegImages :
 
 
 
-    def selectRoi(self, region) :
+    def selectRoi(self, region, image) :
 
-        roi_extr = itk.RegionOfInterestImageFilter[self.ImageType,
-                                                   self.ImageType].New()
-        _ = roi_extr.SetInput(self.image)
+        PixelType, Dim = itk.template(image)[1]
+        ImageType = itk.Image[PixelType, Dim]
+        roi_extr = itk.RegionOfInterestImageFilter[ImageType,
+                                                   ImageType].New()
+        _ = roi_extr.SetInput(image)
         _ = roi_extr.SetRegionOfInterest(region)
         _ = roi_extr.Update()
 
@@ -117,25 +121,26 @@ class LegImages :
         self.ed1 = [int((end[0] + start[0]) / 2), end[1] - 1, end[2] - 1]
         indexes = self._initStartEndIndexes(self.st1, self.ed1)
         region = self._initRegion(indexes)
-        im1 = self.selectRoi(region)
+        im1 = self.selectRoi(region, self.image)
 
         if self.mask is not None:
-            msk1 = self.selectRoi(region)
+            msk1 = self.selectRoi(region, self.mask)
 
         # extract the second image
         self.st2 = [int((end[0] + start[0])/ 2), start[1], start[2]]
         self.ed2 = end - 1
         indexes = self._initStartEndIndexes(self.st2, self.ed2)
         region = self._initRegion(indexes)
-        im2 = self.selectRoi(region)
+        im2 = self.selectRoi(region, self.image)
         if self.mask is not None :
-            msk2 = self.selectRoi(region)
+            msk2 = self.selectRoi(region, self.mask)
 
         return (im1, msk1), (im2, msk2)
 
 
     def reconstruct_image(self, im1, im2, as_mask = False) :
 
+        # FIXME I don't work if mask is not provided
         if as_mask :
             merged_image = np.zeros(self.shape)
         else :

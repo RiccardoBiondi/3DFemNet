@@ -73,9 +73,42 @@ def heaviside_step_function(array) :
 
 
 
-def continuos_heaviside_step_function(array, k) :
+def continuos_heaviside_step_function(array, k = 1500.) :
     '''
+    A continuos and derivable version of the heaviside step function
+    Parameters
+    ----------
+    array: np.array
+        array from which compute the function
+    k : float
+        parameters used to define the sharpness of the function. Default 1500.
     '''
     den = 1. + np.exp(- 2 * k * array)
 
     return 1. / den
+
+
+
+def gradient(array, type = np.float32) :
+    '''
+    Compute the gradient of a given array using the accurate central differences
+    in the interior points and either first or second order accurate one-sides
+    (forward or backwards) differences at the boundaries. To perform this task
+    use the numpy.gradient function.
+
+    Parameters
+    ----------
+    array : np.array
+        array from which compute the gradient
+    type :
+        type from which retive the epsilon. default np.float32
+
+    Return
+    ------
+    grad : np.array
+        A set of ndarrays (or a single ndarray if there is only one dimension)
+        corresponding to the derivatives of f with respect to each dimension.
+        Each derivative has the same shape as array.
+    '''
+    eps = np.finfo(type).eps
+    return np.gradient(array, eps)

@@ -3,6 +3,8 @@
 
 
 import itk
+import json
+import numpy as np
 
 __author__ = ['Riccardo Biondi']
 __email__ = ['riccardo.biondi7@unibo.it']
@@ -169,3 +171,75 @@ def data_augmentation_step(inputs, targets, teta = 10., flip_axis = 'vertical') 
         str which indicates the axis used for flipping the image
     '''
     pass
+
+
+
+def select_leg_wlabel(leg1, leg2) :
+    '''
+    This function is used only for the training step. The availble scans have
+    only one femor labeled. Using this function we select only the leg with the
+    label.
+
+    Parameter
+    ---------
+    leg1 : tuple
+        tuple containing the raw image and the corresponding lebel of the first
+        leg
+    leg2 : tuple
+        tuple containing the raw image and the corresponding lebel of the first
+        leg
+
+    Return
+    ------
+    labeled_leg : tuple
+        tuple with the raw image and label corresponding to the only labeled leg
+    '''
+    l1 = itk.GetArrayFromImage(leg1[1])
+    l2 = itk.GetArrayFromImage(leg2[1])
+    if np.sum(l1) != 0 :
+        return leg1
+
+    elif np.sum(l2 != 0) :
+        return leg2
+    else :
+        raise ValueError('No label found')
+
+
+def save_as_json(dict_, filename) :
+    '''
+    Save a disctionary as json file
+    '''
+    with open(filename, 'w') as outfile:
+        json.dump(data, outfile)
+
+
+def save_image_as_numpy_array(image, filename, save_info = False) :
+    '''
+    Save an itk.Image as numpy array.
+
+    Parameters
+    ----------
+    image: itk.Image
+        image object to save as numpy array
+    filename : str
+        filename
+    save_info: Bool
+        if save of not spatial information. Default False.
+        If true the info will be saved as json with the same name as filename
+    '''
+    array, info = image2array(image)
+
+    with open(filename + '.npy', 'w') as fp:
+        np.save(fp, array)
+
+    if save_info :
+        save_as_json(info, filename + '.json')
+
+
+# TODO Add save numpy array
+
+# TODO Add load json
+
+# TODO Add load numpy array as image
+
+# TODO Add load numpy array
