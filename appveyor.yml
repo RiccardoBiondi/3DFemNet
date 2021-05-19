@@ -32,9 +32,10 @@ install:
   - "%PYTHON%\\python.exe --version"
   - "%PYTHON%\\python.exe -m pip install -U pip"
 
-  # Install requirements
+  # Install requirements and the packege
   - cd %WORKSPACE%\3DFEMNET
   - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
+  - "%PYTHON%\\python.exe setup.py develop --user"
 
   # Install test packages
   - "%PYTHON%\\python.exe -m pip install pytest"
