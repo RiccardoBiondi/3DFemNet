@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-#import tensorflow as tf
+import tensorflow as tf
 
 from Network.layers import Input
 from Network.layers import Conv3D
