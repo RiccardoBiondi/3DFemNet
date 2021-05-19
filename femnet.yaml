@@ -1,4 +1,4 @@
-name: unet3D
+name: femnet
 channels:
   - conda-forge
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
   - matplotlib
   - scikit-learn
   - seaborn
-  - itk=5.2.0
+  - itk=5.1.0
   - jupyter
   - ipython
   - tensorflow=2.4.1

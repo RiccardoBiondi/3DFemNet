@@ -1,0 +1,60 @@
+version: 0.0.0
+pull_requests:
+  do_not_increment_build_number: true
+platform: x64
+
+clone_folder: c:\projects\3DFEMNET
+
+environment:
+
+  WORKSPACE: C:\projects
+
+  matrix:
+
+    - platform: Win64
+    - PYTHON: "C:\\Python36-x64"
+      VERSION: 35
+      ARCH: x64
+      MINICONDA: "C:\\Miniconda36-x64"
+
+    - platform: Win64
+    - PYTHON: "C:\\Python37-x64"
+      VERSION: 36
+      ARCH: x64
+      MINICONDA: "C:\\Miniconda37-x64"
+
+    - platform: Win64
+    - PYTHON: "C:\\Python38-x64"
+      VERSION: 37
+      ARCH: x64
+      MINICONDA: "C:\\Miniconda38-x64"
+
+    - platform: Win64
+    - PYTHON: "C:\\Python39-x64"
+      VERSION: 38
+      ARCH: x64
+      MINICONDA: "C:\\Miniconda39-x64"
+
+build: off
+
+
+install:
+
+    # chack python and upgrade pip
+  - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - "%PYTHON%\\python.exe --version"
+  - "%PYTHON%\\python.exe -m pip install -U pip"
+
+  # crete the conda enviroment and install 3DFemNet
+  - cd %WORKSPACE%\3DFEMNET
+  - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
+  - "conda env create -f unet3D.yaml"
+  - "conda activate unet3D"
+  - "%PYTHON%\\python.exe setup.py develop --user"
+   # testing libraries
+  - "%PYTHON%\\python.exe -m pip install hypothesis"
+  - "%PYTHON%\\python.exe -m pip install pytest"
+
+test_script:
+  -  "%PYTHON%\\Scripts\\pytest.exe"
+  - exit 0

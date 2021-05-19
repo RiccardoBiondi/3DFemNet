@@ -1,0 +1,6 @@
+  - '.github/**'
+  - '**.md'
+  - 'docs/**'
+  - test/**
+  - appveyor.yml
+  - .travis.ylm
