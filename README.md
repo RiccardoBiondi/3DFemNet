@@ -1,6 +1,6 @@
 | **Authors**  | **Project** |  **Build Status** | **License** | **Code Quality** | **Coverage** |
 |:------------:|:-----------:|:-----------------:|:-----------:|:----------------:|:------------:|
-| [**R.Biondi**](https://github.com/RiccardoBiondi) | **3DFemNet** | **Windows**: **Linux**:|[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()|**Codacy** **Codebeat**||
+| [**R.Biondi**](https://github.com/RiccardoBiondi) | **3DFemNet** | **Windows**: [![Build status](https://ci.appveyor.com/api/projects/status/d57n1rv4yk29daok?svg=true)](https://ci.appveyor.com/project/RiccardoBiondi/3dfemnet)**Linux**: [![Build Status](https://travis-ci.com/RiccardoBiondi/3DFemNet.svg?branch=main)](https://travis-ci.com/RiccardoBiondi/3DFemNet)|[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()|**Codacy** [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6f428fcfb13840d7b2f439f5e8c3d384)](https://www.codacy.com/gh/RiccardoBiondi/3DFemNet/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RiccardoBiondi/3DFemNet&amp;utm_campaign=Badge_Grade) **Codebeat** [![codebeat badge](https://codebeat.co/badges/be5cd759-f5ed-4db2-82c0-c4549dcd4989)](https://codebeat.co/projects/github-com-riccardobiondi-3dfemnet-main)||
 
 
 ![Project CI](https://github.com/RiccardoBiondi/3DFemNet/workflows/3DFemNet%20CI/badge.svg)
@@ -46,7 +46,7 @@ the continuos Signed Distance Function. This will lead to a smoother and accurat
 
 ## Contribute
 
-Any contribution is more than welcome. Just fill an [issue](./.github/ISSUE_TEMPLATE/ISSUE_TEMPLATE.md) or a [pull request](./.github/PULL_REQUEST_TEMPLATE/PULL_REQUEST_TEMPLATE.md) and we will check ASAP!
+Any contribution is more than welcome. Just fill an [issue](./.github//ISSUE_TEMPLATE.md) or a [pull request](./.github/PULL_REQUEST_TEMPLATE.md) and we will check ASAP!
 
 See [here](https://github.com/RiccardoBiondi/3DFemNet/blob/master/CONTRIBUTING.md) for further informations about how to contribute with this project.
 
@@ -62,7 +62,7 @@ If you have found `3DFemNet` helpful in your research, please consider citing th
   title = {Deep Learning approach for the reconstruction of femur segmentation using the Signed Distance Function},
   year = {2021},
   publisher = {GitHub},
-  howpublished = {\url{}}
+  howpublished = {\url{https://github.com/RiccardoBiondi/3DFemNet}}
 }
 ```
 
