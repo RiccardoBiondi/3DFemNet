@@ -1,0 +1,4 @@
+numpy
+tensorflow
+itk>=5.2.0
+matplotlib

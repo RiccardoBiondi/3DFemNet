@@ -1,0 +1,16 @@
+name: unet3D
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - itk=5.2.0
+  - jupyter
+  - ipython
+  - tensorflow=2.4.1
