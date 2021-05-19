@@ -13,35 +13,26 @@ environment:
 
     - platform: Win64
     - PYTHON: "C:\\Python36-x64"
-      VERSION: 35
-      ARCH: x64
-      MINICONDA: "C:\\Miniconda36-x64"
-
-    - platform: Win64
-    - PYTHON: "C:\\Python37-x64"
       VERSION: 36
       ARCH: x64
-      MINICONDA: "C:\\Miniconda37-x64"
 
-    - platform: Win64
-    - PYTHON: "C:\\Python38-x64"
+    - PYTHON: "C:\\Python37-x64"
       VERSION: 37
       ARCH: x64
-      MINICONDA: "C:\\Miniconda38-x64"
 
-    - platform: Win64
-    - PYTHON: "C:\\Python39-x64"
+    - PYTHON: "C:\\Python38-x64"
       VERSION: 38
       ARCH: x64
-      MINICONDA: "C:\\Miniconda39-x64"
 
+    - PYTHON: "C:\\Python39-x64"
+      VERSION: 39
+      ARCH: x64
 build: off
 
 
 install:
 
     # chack python and upgrade pip
-  - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
   - "%PYTHON%\\python.exe --version"
   - "%PYTHON%\\python.exe -m pip install -U pip"
 

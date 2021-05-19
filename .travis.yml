@@ -42,7 +42,7 @@ before_install:
   - python -m pip install --upgrade pip
   - python -m pip --version
     # install dependencies
-  - python -m pip install requirements.txt
+  - python -m pip install -r requirements.txt
 
   # testing libraries
   - python -m pip install pytest==3.0.7
