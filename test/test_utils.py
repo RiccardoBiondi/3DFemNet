@@ -18,7 +18,6 @@ from utils.utils import array2image
 from utils.utils import get_image_info
 from utils.utils import set_image_info
 from utils.utils import cast_image
-from utils.utils import signed_maurier_distance
 
 
 __author__ = ['Riccardo Biondi']
