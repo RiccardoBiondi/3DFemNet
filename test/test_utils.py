@@ -141,12 +141,12 @@ def test_select_leg1_w_wlabel(legs) :
 
     assert np.all(selected[0] == leg1[0])
 
-@given()
-def test_save_and_load_json(dict_, filename) :
+#@given()
+#def test_save_and_load_json(dict_, filename) :
     # TODO test implementation
-    pass
+#    pass
 
-@given()
-def save_and_load_array(image, filename) :
+#@given()
+#def save_and_load_array(image, filename) :
     # TODO test implementation
-    pass
+#    pass

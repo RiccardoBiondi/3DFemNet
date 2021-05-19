@@ -210,7 +210,7 @@ def save_as_json(dict_, filename) :
     Save a disctionary as json file
     '''
     with open(filename, 'w') as outfile:
-        json.dump(data, outfile)
+        json.dump(dict_, outfile)
 
 
 def save_image_as_numpy_array(image, filename, save_info = False) :
