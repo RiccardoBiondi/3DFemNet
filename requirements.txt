@@ -1,4 +1,5 @@
 numpy
 tensorflow
-itk>=5.1.0
+itk==5.1.0
 matplotlib
+scikit-learn

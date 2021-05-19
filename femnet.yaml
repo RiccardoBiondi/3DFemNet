@@ -13,4 +13,4 @@ dependencies:
   - itk=5.1.0
   - jupyter
   - ipython
-  - tensorflow=2.4.1
+  - tensorflow>2.0.0

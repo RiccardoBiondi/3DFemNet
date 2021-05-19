@@ -41,19 +41,8 @@ before_install:
     # check python installation and upgrade pip
   - python -m pip install --upgrade pip
   - python -m pip --version
-    # install conda
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - source "$HOME/miniconda/etc/profile.d/conda.sh"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  # Useful for debugging any issues with conda
-  - conda info -a
-
-    # create the environment
-  - conda env create -f femnet.yaml
-  - conda activate femnet
+    # install dependencies
+  - python -m pip install requirements.txt
 
   # testing libraries
   - python -m pip install pytest==3.0.7
