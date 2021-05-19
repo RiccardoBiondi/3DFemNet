@@ -39,4 +39,4 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pytest ./testing --cov=3DFemNet --cov-config=.coveragerc
+          pytest  --cov=3DFemNet --cov-config=.coveragerc
