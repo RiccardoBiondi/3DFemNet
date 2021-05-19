@@ -175,7 +175,7 @@ class TestVolumeWriter :
         Assert :
             - Correct assignement is done
         '''
-        base_path = "./testing/test_images/{}/{}.{}"
+        base_path = "./test/test_images/{}/{}.{}"
         path = base_path.format(inPath[0], inPath[1], inPath[2])
 
         writer = IOManager.VolumeWriter(path, image)
@@ -210,7 +210,7 @@ class TestReadAndWrite :
         Assert :
             - the red image is equal to the input one
         '''
-        base_path = "./testing/test_images/{}.{}"
+        base_path = "./test/test_images/{}.{}"
         path = base_path.format(inPath[1], inPath[2])
         pixelType, dimension = itk.template(image)[1]
         imageType = itk.Image[pixelType, dimension]
@@ -245,7 +245,7 @@ class TestReadAndWrite :
             - red pixel type is equal to input one
             - red image array is close to input one
         '''
-        dicom_path = os.path.join("./testing/test_images", folder_name)
+        dicom_path = os.path.join("./test/test_images", folder_name)
         pixelType, dimension = itk.template(image)[1]
         imageType = itk.Image[pixelType, dimension]
         inArray = itk.GetArrayFromImage(image)
@@ -287,9 +287,9 @@ class TestReadAndWrite :
         inArray = itk.GetArrayFromImage(image)
 
         if as_dicom :
-            path = os.path.join("./testing/test_images", inPath[0])
+            path = os.path.join("./test/test_images", inPath[0])
         else :
-            base_path = "./testing/test_images/{}.{}"
+            base_path = "./test/test_images/{}.{}"
             path = base_path.format(inPath[1], inPath[2])
 
         writer = IOManager.VolumeWriter(path = path, image = image, as_dicom = as_dicom)
@@ -327,9 +327,9 @@ class TestReadAndWrite :
         inArray = itk.GetArrayFromImage(image)
 
         if as_dicom :
-            path = os.path.join("./testing/test_images", inPath[0])
+            path = os.path.join("./test/test_images", inPath[0])
         else :
-            base_path = "./testing/test_images/{}.{}"
+            base_path = "./test/test_images/{}.{}"
             path = base_path.format(inPath[1], inPath[2])
 
         writer = IOManager.VolumeWriter()

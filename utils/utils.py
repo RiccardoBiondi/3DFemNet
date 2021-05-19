@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
+
 import itk
 
 __author__ = ['Riccardo Biondi']
@@ -88,12 +88,12 @@ def set_image_info(image, info) :
     image : itk Image obj
     info : dict
     '''
-    _ = image.SetSpacing(spatial_info['Spacing'])
-    _ = image.SetOrigin(spatial_info['Origin'])
-    _ = image.SetDirection(spatial_info['Direction'])
-    _ = image.GetLargestPossibleRegion().SetSize(spatial_info['Size'])
-    _ = image.GetLargestPossibleRegion().SetIndex(spatial_info['Index'])
-    _ = image.GetLargestPossibleRegion().SetUpperIndex(spatial_info['Upper Index'])
+    _ = image.SetSpacing(info['Spacing'])
+    _ = image.SetOrigin(info['Origin'])
+    _ = image.SetDirection(info['Direction'])
+    _ = image.GetLargestPossibleRegion().SetSize(info['Size'])
+    _ = image.GetLargestPossibleRegion().SetIndex(info['Index'])
+    _ = image.GetLargestPossibleRegion().SetUpperIndex(info['Upper Index'])
 
 
 

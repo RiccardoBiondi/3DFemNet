@@ -4,13 +4,13 @@
 
 
 import itk
-
+import numpy as np
 
 # change depedencies
 from FemurSegmentation.methods import median_filter
 from FemurSegmentation.methods import opening
 from FemurSegmentation.methods import binary_threshold
-from FemurSegmentation.utilities import image2array, array2image, cast_image
+from FemurSegmentation.utilities import image2array, array2image
 
 
 __author__ = ['Riccardo Biondi']

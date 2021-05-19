@@ -9,7 +9,7 @@ from  hypothesis import HealthCheck as HC
 import os
 import itk
 import numpy as np
-from network.UNet3D import UNet3D
+from Network.UNet3D import UNet3D
 
 
 

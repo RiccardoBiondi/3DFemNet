@@ -6,7 +6,7 @@ import hypothesis.strategies as st
 from hypothesis import given, settings
 from  hypothesis import HealthCheck as HC
 
-import os
+
 import itk
 import numpy as np
 from utils.resampler import Resampler

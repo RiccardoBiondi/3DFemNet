@@ -46,6 +46,8 @@ def random_image_strategy(draw) :
 
 @st.composite
 def spatial_info_strategy(draw) :
+
+    # must genearate
     pass
 
 

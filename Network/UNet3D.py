@@ -2,9 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 
-from Network.leyers import Input, Conv3D, MaxPool3D, UpSampling3D, Input
+from Network.layers import Input
+from Network.layers import Conv3D
+from Network.layers import Deconv3D
+from Network.layers import MaxPool3D
+from Network.layers import UpSampling3D
+
 __author__ = ['Riccardo Biondi']
 __email__ = ['riccardo.biondi7@unibo.it']
 

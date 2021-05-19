@@ -37,7 +37,7 @@ def UpSampling3D(size = (2, 2, 2)) :
 
 
 
-def Conv3D() :
+def Conv3D(filters, kernel_size = (3, 3, 3), strides = 1) :
     '''
     Customization of the 3D convolution layer.
 
@@ -54,11 +54,18 @@ def Conv3D() :
 
     return ly.Conv3D(filters = filters,
                     kernel_size = kernel_size,
-                    strides = 1,
+                    strides = strides,
                     padding = 'same',
                     activation = 'relu')
 
 
+
+def Deconv3D(filters, kernel_size, strides) :
+
+    return ly.Deconv3D(fliters = filter,
+                       kernel_size = kernel_size,
+                       padding = 'same',
+                       activation = 'relu')
 
 def Input() :
     '''
